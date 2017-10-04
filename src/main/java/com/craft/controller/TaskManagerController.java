@@ -54,8 +54,8 @@ public class TaskManagerController {
 		return new ResponseEntity<>(null, httpHeaders, HttpStatus.CREATED);
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<?> deleteTask(@PathVariable("id") String taskId) {
+	@RequestMapping(value = "/{taskId}", method = RequestMethod.DELETE)
+	public ResponseEntity<?> deleteTask(@PathVariable("taskId") String taskId) {
 		taskManagerService.deleteTask(taskId);
 		HttpHeaders httpHeaders = new HttpHeaders();
 		return new ResponseEntity<>(null, httpHeaders, HttpStatus.OK);
